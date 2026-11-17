@@ -4,86 +4,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Love ❤️</title>
+<title>For My Mabyy ❤️</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffc3a0);
-  padding: 20px;
-  text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffb6c9, #ff7eb3, #ffc3a0);
 }
+
 .card {
-  background: rgba(255,255,255,.94);
-  padding: 35px 25px;
-  border-radius: 25px;
-  max-width: 390px;
-  width: 100%;
-  box-shadow: 0 15px 40px rgba(120,0,50,.2);
+    width: 90%;
+    max-width: 380px;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(180,40,100,0.25);
+    z-index: 2;
+    animation: appear 1s ease;
 }
-.heart {
-  font-size: 65px;
-  animation: beat 1s infinite;
+
+h1 {
+    color: #e84379;
+    font-size: 35px;
+    margin-bottom: 15px;
 }
-h1 { color: #e84373; }
-p { color: #555; line-height: 1.7; }
+
+p {
+    color: #8c4260;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.main-heart {
+    font-size: 65px;
+    margin: 15px 0;
+    animation: heartbeat 1s infinite;
+}
+
 button {
-  border: none;
-  border-radius: 30px;
-  padding: 15px 28px;
-  background: #ff4f81;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 15px;
+    border: none;
+    padding: 14px 28px;
+    margin-top: 22px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4f91, #ff78ad);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #ff9abb;
+    transition: 0.3s;
 }
+
+button:active {
+    transform: scale(0.9);
+}
+
 #message {
-  display: none;
-  margin-top: 25px;
-  animation: fade 1.2s;
+    display: none;
+    margin-top: 25px;
+    animation: appear 1s ease;
 }
-#message h2 { color: #e84373; }
-@keyframes beat {
-  50% { transform: scale(1.2); }
+
+#message h2 {
+    color: #e84379;
+    margin-bottom: 12px;
 }
-@keyframes fade {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+
+.floating-heart {
+    position: fixed;
+    bottom: -40px;
+    color: #ff286f;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 1;
+}
+
+.burst-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 5;
+    animation: burst 1.3s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: 0.9; }
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(0,0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
+
 <body>
+
 <div class="card">
-  <div class="heart">❤️</div>
-  <h1>Hi, My Love! 🥰</h1>
-  <p>I have a little surprise for you.</p>
-  <p>There's something I want you to know...</p>
+    <div class="main-heart">❤️</div>
 
-  <button onclick="showLove()">Pislita ko, Love ❤️</button>
+    <h1>Hi Mabyy! 💗</h1>
+    <p>I have a little surprise for you, My Maby.</p>
 
-  <div id="message">
-    <h2>I LOVE YOU SO MUCH! ❤️</h2>
-    <p>
-      Ikaw akong favorite person, my love.
-      Thank you for being part of my life.
-      I will keep choosing you, loving you,
-      and making memories with you.
-      Forever and always, ikaw ra. ❤️😘
-    </p>
-    <div class="heart">💗</div>
-  </div>
+    <button onclick="showLove(event)">
+        Click Me, Mabyy! 💕
+    </button>
+
+    <div id="message">
+        <h2>I LOVE YOU SO MUCH! ❤️</h2>
+        <p>
+            You're my favorite person, my happiness,
+            and my sweetest blessing. 🥹💕
+            <br><br>
+            No matter what happens, I'll always choose you.
+            I love you, Mabyy! Amping ka kanunay😘
+        </p>
+        <div class="main-heart">💖</div>
+    </div>
 </div>
 
 <script>
-function showLove() {
-  document.getElementById("message").style.display = "block";
+// Floating hearts in the background
+const hearts = ["❤️", "💕", "💗", "💖", "💘", "💓"];
+
+function createFloatingHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createFloatingHeart, 350);
+
+// Heart explosion when clicked
+function heartBurst(x, y) {
+    for (let i = 0; i < 35; i++) {
+        const heart = document.createElement("div");
+        heart.className = "burst-heart";
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+        heart.style.setProperty("--x", (Math.random() - 0.5) * 400 + "px");
+        heart.style.setProperty("--y", (Math.random() - 0.5) * 400 + "px");
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 1400);
+    }
+}
+
+function showLove(event) {
+    const button = event.currentTarget;
+    const rect = button.getBoundingClientRect();
+
+    heartBurst(
+        rect.left + rect.width / 2,
+        rect.top + rect.height / 2
+    );
+
+    document.getElementById("message").style.display = "block";
+    button.innerHTML = "I LOVE YOU TOO! ❤️";
+    button.disabled = true;
 }
 </script>
+
 </body>
 </html>
